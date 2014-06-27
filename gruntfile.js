@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Settings
   grunt.option('cssFolder', 'css');
   grunt.option('jsFolder', 'js');
-  grunt.option('iconFolder', 'images/icons');
+  grunt.option('iconFolder', 'icons');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -97,7 +97,7 @@ module.exports = function(grunt) {
           expand: true,
 
           // source folder
-          cwd: 'resources/icons',
+          cwd: grunt.option("cssFolder"),
 
           // all svgs
           src: ['*.svg'],
@@ -164,8 +164,11 @@ module.exports = function(grunt) {
           from: /<title>[\W\s\d\w]*<\/title>/,
           to: '<title></title>'
         },{
-          from: /<%= csrf_meta_tags %>[\W\s\d\w]*<% end  %>/,
+          from: /<%= csrf_meta_tags %>/,
           to: ''
+        },{
+          from: /<% unless Rails.env[\W\s\d\w]*<% end  %>/,
+          to: '<meta name="robots" content="noindex,nofollow"/>'
         },{
           from: /<%= render "layouts\/webfonts" -%>/,
           to: ''
