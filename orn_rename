@@ -11,6 +11,12 @@ JS_BASE="$ORN/lib/generators/ornament/templates/app/assets/javascripts"
 JS_VENDOR="$ORN/lib/generators/ornament/templates/vendor/assets/javascripts"
 
 #
+# install grunt modules
+#
+
+npm install
+
+#
 # move CSS over to new CSS folder
 #
 

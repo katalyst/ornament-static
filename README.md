@@ -7,9 +7,7 @@ tasks for sass and JS building.
 
 1. Git clone this repo in to your project folder.  
 1. Git clone ornament in to [your project folder]/ornament  
-1. Run `npm install` to install the node modules.  
 1. Run `./orn_rename` to pull css, js and html files in to your project.  
-1. Update vendor css imports from "file" to "vendor/file" 
 1. Open index.html and replace the rails stuff with html stuff, ie. title, scripts, yields etc.
 1. Run `grunt ornament_patch` to update HTML file. Removes rails commands and replaces with HTML stuff, new JS/CSS includes.  
 1. Download jquery.js and add to /js/vendor
