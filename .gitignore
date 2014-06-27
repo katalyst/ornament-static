@@ -1,9 +1,12 @@
 .DS_Store
 .sass-cache
 .npm-debug
+
 node_modules
 ornament
 css
 inc
+images
 js
+
 index.html

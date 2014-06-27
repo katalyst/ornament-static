@@ -61,7 +61,7 @@ echo "CSS successfully renamed."
 #
 
 echo "Copying image assets..."
-mv "$ORN/lib/generators/ornament/templates/app/assets/image" "$DIR/images"
+mv "$ORN/lib/generators/ornament/templates/app/assets/images" "$DIR/images"
 mv "$ORN/lib/generators/ornament/templates/app/assets/icons" "$DIR/icons"
 echo "Image assets successfully copied."
 
@@ -71,7 +71,7 @@ echo "Image assets successfully copied."
 
 echo "Copying HTML files..."
 mkdir "$DIR/inc"
-# mv "$ORN/lib/generators/ornament/templates/app/views/layouts/global.html.erb" "$DIR/index.html"
+mv "$ORN/lib/generators/ornament/templates/app/views/layouts/global.html.erb" "$DIR/index.html"
 mv "$ORN/lib/generators/ornament/templates/app/views/layouts/_webfonts.html.erb" "$DIR/inc/_webfonts.html"
 
 echo "HTML files successfully copied, running ornament patch..."
@@ -81,3 +81,7 @@ echo "Ornament HTML patch completed."
 #
 # copy over styleguide files
 #
+
+echo "Building JS and CSS for first time"
+grunt css
+grunt js

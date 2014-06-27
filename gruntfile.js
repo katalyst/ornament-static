@@ -159,51 +159,54 @@ module.exports = function(grunt) {
     replace: {
       ornament_index: {
         src: ['index.html'],
-        dest: ['index.html'],
+        overwrite: true,
         replacements: [{
           from: /<title>[\W\s\d\w]*<\/title>/,
           to: '<title></title>'
         },{
-          from: '<`%= render "layouts/webfonts" -`%>',
+          from: /<%= csrf_meta_tags %>[\W\s\d\w]*<% end  %>/,
           to: ''
         },{
-          from: '<`%= stylesheet_link_tag "application", :media => "all" `%>',
+          from: /<%= render "layouts\/webfonts" -%>/,
+          to: ''
+        },{
+          from: /<%= stylesheet_link_tag "application", :media => "all" %>/,
           to: '<link rel="stylesheet" href="css/application.css" />'
         },{
-          from: '<`%= javascript_include_tag "application" `%>',
+          from: /<%= javascript_include_tag "application" %>/,
           to: '<script src="js/application.min.js"></script>'
         },{
-          from: '<`%= javascript_include_tag "modernizr.js" `%>',
+          from: /<%= javascript_include_tag "modernizr.js" %>/,
           to: '<script src="js/vendor/modernizr.js"></script>'
         },{
-          from: '<`%= javascript_include_tag "selectivizr.js" `%>',
+          from: /<%= javascript_include_tag "selectivizr.js" %>/,
           to: '<script src="js/vendor/selectivizr.js"></script>'
         },{
-          from: '<`%= javascript_include_tag "css3-mediaqueries.js" `%>',
+          from: /<%= javascript_include_tag "css3-mediaqueries.js" %>/,
           to: '<script src="js/vendor/css3-mediaqueries.js"></script>'
         },{
-          from: '<`%= yield :scripts `%>',
+          from: /<%= yield :scripts %>/,
           to: ''
         },{
-          from: '<`%= yield :styles `%>',
+          from: /<%= yield :styles %>/,
           to: ''
         },{
-          from: '<`%= yield :meta `%>',
+          from: /<%= yield :meta %>/,
           to: ''
         },{
-          from: '<`%= content_tag :div, class: "layout--content environment-#{Rails.env}" do `%>',
+          from: /<%= content_tag :div, class: "layout--content environment-#{Rails.env}" do %>/,
           to: '<div class="layout--content">'
         },{
-          from: '<`%= content_for?(:global) ? yield(:global) : yield `%>',
-          to: ''
+          from: /<%= content_for\?\(:global\) \? yield\(:global\) : yield %>/,
+          to: '<h1>Hello world.</h1>'
         },{
-          from: '<`% end `%>',
+          from: /<% end %>/,
           to: '</div>'
         },{
-          from: '<`%= javascript_include_tag "application_bottom" `%>',
+          from: /<%= javascript_include_tag "application_bottom" %>/,
           to: '<script src="js/application-bottom.min.js"></script>'
         },{
-          from: '<`%= yield :scripts_bottom `%>',
+          from: /<%= yield :scripts_bottom %>/,
           to: ''
         }]
       },
