@@ -1,0 +1,83 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "$0" )" > /dev/null; pwd )"
+ORN="$DIR/ornament"
+
+CSS_BASE="$ORN/lib/generators/ornament/templates/app/assets/stylesheets"
+CSS_VENDOR="$ORN/lib/generators/ornament/templates/vendor/assets/stylesheets"
+CSS_SETTINGS="$ORN/test/dummy/app/assets/stylesheets/_settings.css.scss"
+
+JS_BASE="$ORN/lib/generators/ornament/templates/app/assets/javascripts"
+JS_VENDOR="$ORN/lib/generators/ornament/templates/vendor/assets/javascripts"
+
+#
+# move CSS over to new CSS folder
+#
+
+echo "Copying CSS..."
+mv "$CSS_BASE" "$DIR/css"
+mv "$CSS_VENDOR" "$DIR/css/vendor"
+mv "$CSS_SETTINGS" "$DIR/css/$1"
+echo "CSS successfully copied."
+
+#
+# move JS over to new JS folder
+#
+
+echo "Copying JS..."
+mv "$JS_BASE" "$DIR/js"
+mv "$JS_VENDOR" "$DIR/js/vendor"
+
+#
+# remove railsy .js files
+# these files only have //= require statements in them
+#
+
+rm "$DIR/js/ornament/core.js"
+rm "$DIR/js/application.js"
+rm "$DIR/js/application_bottom.js"
+
+echo "JS successfully copied."
+
+#
+# rename css from .css.scss to .scss
+#
+
+echo "Renaming CSS files..."
+for files in css/*.css.scss css/**/*.css.scss css/**/**/*.css.scss
+do
+  mv "$files" "${files%.css.scss}.scss"
+done
+
+#
+# rename existing css files to scss partials
+#
+
+mv "$DIR/css/vendor/fotorama.css" "$DIR/css/vendor/_fotorama.scss" 
+echo "CSS successfully renamed."
+
+#
+# copy over image assets
+#
+
+echo "Copying image assets..."
+mv "$ORN/lib/generators/ornament/templates/app/assets/image" "$DIR/images"
+mv "$ORN/lib/generators/ornament/templates/app/assets/icons" "$DIR/icons"
+echo "Image assets successfully copied."
+
+#
+# copy over html file
+#
+
+echo "Copying HTML files..."
+mkdir "$DIR/inc"
+# mv "$ORN/lib/generators/ornament/templates/app/views/layouts/global.html.erb" "$DIR/index.html"
+mv "$ORN/lib/generators/ornament/templates/app/views/layouts/_webfonts.html.erb" "$DIR/inc/_webfonts.html"
+
+echo "HTML files successfully copied, running ornament patch..."
+grunt ornament_patch
+echo "Ornament HTML patch completed."
+
+#
+# copy over styleguide files
+#
