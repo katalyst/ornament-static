@@ -89,10 +89,17 @@ grunt ornament_patch
 echo "Ornament HTML patch completed."
 
 #
-# copy over styleguide files
+# download jquery
 #
 
-echo "Building JS and CSS for first time"
+echo "Download latest jQuery..."
+curl -s "http://code.jquery.com/jquery.js" "$DIR/js/vendor/jquery.js"
+
+#
+# building JS and CSS via grunt 
+#
+
+echo "Building JS and CSS for first time using grunt..."
 grunt css
 grunt js
 
@@ -122,3 +129,9 @@ echo node_modules > .gitignore
 
 echo "Cleaning up ornament folder"
 rm -rf ornament
+
+#
+# open the index file
+#
+
+open index.html
