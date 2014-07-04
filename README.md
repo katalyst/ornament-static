@@ -22,9 +22,13 @@ tasks for sass and JS building.
 `grunt watch` - Auto-runs the CSS and JS tasks when .scss and .js files are updated.   
 `grunt icons` - The usual ornament icon builder. See the ornament docs for more info.   
 
+## LiveReload
+
+1. Install the [LiveReload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-), visit your page and enable it.  
+1. Run `grunt watch`  
+
 ## Todo
 
-1. Auto-reload  
 1. Includes (grunt-includes)  
 1. Re-import webfonts include  
 1. Loops, basic logic helpers (grunt-html-build?)  

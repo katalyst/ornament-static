@@ -82,7 +82,7 @@ module.exports = function(grunt) {
         }
       },
       css: {
-        files: [grunt.option("cssFolder") '/**/*.scss'],
+        files: [grunt.option("cssFolder")+'/**/*.scss'],
         tasks: ['css'],
         options: {
           livereload: true,
