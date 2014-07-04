@@ -108,6 +108,7 @@ rm -rf .gitignore
 #
 
 git init
+git add .
 
 #
 # create a new gitignore file
