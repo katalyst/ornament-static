@@ -117,13 +117,6 @@ echo node_modules > .gitignore
 echo .sass-cache >> .gitignore
 
 #
-# re-initing git
-#
-
-git init
-git add .
-
-#
 # delete ornament folder
 #
 
@@ -141,3 +134,10 @@ rm -rf ./orn_rename
 #
 
 open index.html
+
+#
+# re-initing git
+#
+
+git init
+git add .
