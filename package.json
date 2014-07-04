@@ -8,7 +8,7 @@
     "grunt-contrib-concat": "~0.4",
     "grunt-contrib-uglify": "~0.5",
     "grunt-contrib-watch": "~0.6",
-    "grunt-text-replace": "~0.4.0",
+    "grunt-text-replace": "~0.3.12",
     "grunt-includes": "~0.4.5"
   }
 }
