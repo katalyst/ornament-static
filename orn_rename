@@ -93,7 +93,7 @@ echo "Ornament HTML patch completed."
 #
 
 echo "Download latest jQuery..."
-curl -s "http://code.jquery.com/jquery.js" "$DIR/js/vendor/jquery.js"
+curl -s "http://code.jquery.com/jquery.js" > "$DIR/js/vendor/jquery.js"
 
 #
 # building JS and CSS via grunt 
