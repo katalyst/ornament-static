@@ -24,8 +24,9 @@ tasks for sass and JS building.
 
 ## Todo
 
+1. Auto-reload  
 1. Includes (grunt-includes)  
-1. Loops, basic logic helpers (grunt-html-build?)  
 1. Re-import webfonts include  
+1. Loops, basic logic helpers (grunt-html-build?)  
 1. Image minification (grunt-imagemin)  
-1. Copy over styleguide  
+1. Do something with the styleguide  

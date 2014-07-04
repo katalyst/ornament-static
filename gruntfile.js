@@ -78,13 +78,15 @@ module.exports = function(grunt) {
         tasks: ['js'],
         options: {
           livereload: true,
+          livereloadOnError: false,
         }
       },
       css: {
-        files: ['<%= grunt.option("cssFolder") -%>/**/*.scss'],
+        files: [grunt.option("cssFolder") '/**/*.scss'],
         tasks: ['css'],
         options: {
           livereload: true,
+          livereloadOnError: false,
         }
       }
     },
