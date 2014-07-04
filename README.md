@@ -8,7 +8,6 @@ tasks for sass and JS building.
 1. Git clone this repo in to your project folder.  
 1. Run `./orn_rename` to pull css, js and html files in to your project.  
 1. Run `grunt ornament_patch` to update HTML file. Removes rails commands and replaces with HTML stuff, new JS/CSS includes.  
-1. Download jquery.js and add to /js/vendor
 1. Run `grunt watch` and start developing!  
 
 ## Optional Steps

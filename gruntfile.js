@@ -207,7 +207,7 @@ module.exports = function(grunt) {
           to: '</div>'
         },{
           from: /<%= javascript_include_tag "application_bottom" %>/,
-          to: '<script src="js/application-bottom.min.js"></script>'
+          to: '<script src="js/application_bottom.min.js"></script>'
         },{
           from: /<%= yield :scripts_bottom %>/,
           to: ''
