@@ -14,7 +14,6 @@ JS_VENDOR="$ORN/lib/generators/ornament/templates/vendor/assets/javascripts"
 # pull the latest ornament in
 #
 
-echo "Downloading Ornament..."
 git clone git@github.com:katalyst/ornament.git -b feature/development ornament
 
 #
@@ -111,6 +110,13 @@ rm -rf .git
 rm -rf .gitignore
 
 #
+# create a new gitignore file
+#
+
+echo node_modules > .gitignore
+echo .sass-cache >> .gitignore
+
+#
 # re-initing git
 #
 
@@ -118,17 +124,17 @@ git init
 git add .
 
 #
-# create a new gitignore file
-#
-
-echo node_modules > .gitignore
-
-#
 # delete ornament folder
 #
 
 echo "Cleaning up ornament folder"
 rm -rf ornament
+
+#
+# remove this file
+#
+
+rm -rf ./orn_rename
 
 #
 # open the index file
