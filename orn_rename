@@ -11,9 +11,17 @@ JS_BASE="$ORN/lib/generators/ornament/templates/app/assets/javascripts"
 JS_VENDOR="$ORN/lib/generators/ornament/templates/vendor/assets/javascripts"
 
 #
+# pull the latest ornament in
+#
+
+echo "Downloading Ornament..."
+git clone git@github.com:katalyst/ornament.git -b feature/development ornament
+
+#
 # install grunt modules
 #
 
+echo "Installing node dependancies..."
 npm install
 
 #
@@ -24,7 +32,6 @@ echo "Copying CSS..."
 mv "$CSS_BASE" "$DIR/css"
 mv "$CSS_VENDOR" "$DIR/css/vendor"
 mv "$CSS_SETTINGS" "$DIR/css/$1"
-echo "CSS successfully copied."
 
 #
 # move JS over to new JS folder
@@ -39,11 +46,10 @@ mv "$JS_VENDOR" "$DIR/js/vendor"
 # these files only have //= require statements in them
 #
 
+echo "Removing unnecessary JS..."
 rm "$DIR/js/ornament/core.js"
 rm "$DIR/js/application.js"
 rm "$DIR/js/application_bottom.js"
-
-echo "JS successfully copied."
 
 #
 # rename css from .css.scss to .scss
@@ -60,7 +66,6 @@ done
 #
 
 mv "$DIR/css/vendor/fotorama.css" "$DIR/css/vendor/_fotorama.scss" 
-echo "CSS successfully renamed."
 
 #
 # copy over image assets
@@ -69,7 +74,6 @@ echo "CSS successfully renamed."
 echo "Copying image assets..."
 mv "$ORN/lib/generators/ornament/templates/app/assets/images" "$DIR/images"
 mv "$ORN/lib/generators/ornament/templates/app/assets/icons" "$DIR/icons"
-echo "Image assets successfully copied."
 
 #
 # copy over html file
@@ -91,3 +95,29 @@ echo "Ornament HTML patch completed."
 echo "Building JS and CSS for first time"
 grunt css
 grunt js
+
+#
+# remove static-site git files
+#
+
+rm -rf .git
+rm -rf .gitignore
+
+#
+# re-initing git
+#
+
+git init
+
+#
+# create a new gitignore file
+#
+
+echo node_modules > .gitignore
+
+#
+# delete ornament folder
+#
+
+echo "Cleaning up ornament folder"
+rm -rf ornament
