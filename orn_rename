@@ -21,6 +21,7 @@ git clone git@github.com:katalyst/ornament.git -b feature/development ornament
 #
 
 echo "Installing node dependancies..."
+npm install grunt-cli
 npm install
 
 #

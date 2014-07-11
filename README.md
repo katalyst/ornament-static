@@ -3,9 +3,12 @@
 Converts the rails Ornament framework in to a static-site friendly format, including grunt 
 tasks for sass and JS building. 
 
-## Getting Started
 
-1. Make sure `npm` is installed  
+## Prerequesites
+1. NPM (`brew install npm`)
+1. Compass (`gem install compass`)
+
+## Getting Started
 1. Git clone this repo in to your project folder.  
 1. Run `./orn_rename` to pull css, js and html files in to your project.  
 1. Run `grunt watch` and start developing!  
