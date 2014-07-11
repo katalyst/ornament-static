@@ -5,6 +5,7 @@ tasks for sass and JS building.
 
 ## Getting Started
 
+1. Make sure `npm` is installed  
 1. Git clone this repo in to your project folder.  
 1. Run `./orn_rename` to pull css, js and html files in to your project.  
 1. Run `grunt watch` and start developing!  
@@ -13,7 +14,7 @@ tasks for sass and JS building.
 
 1. Customise file paths in gruntfile.js
 1. Customise what JS components are needed in your gruntfile.js  
-1. Remove css/styleguide.[css|scss]
+1. Remove css/styleguide.[css|scss]  
 
 ## Grunt tasks   
 
