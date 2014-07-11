@@ -10,7 +10,7 @@ tasks for sass and JS building.
 
 ## Getting Started
 1. Git clone this repo in to your project folder.  
-1. Run `./orn_rename` to pull css, js and html files in to your project.  
+1. Run `./generate_ornament` to pull css, js and html files in to your project.  
 1. Run `grunt watch` and start developing!  
 
 ## Optional Steps
