@@ -181,13 +181,13 @@ module.exports = function(grunt) {
           from: /<%= javascript_include_tag "application" %>/,
           to: '<script src="js/application.min.js"></script>'
         },{
-          from: /<%= javascript_include_tag "modernizr.js" %>/,
+          from: /<%= javascript_include_tag "modernizr" %>/,
           to: '<script src="js/vendor/modernizr.js"></script>'
         },{
-          from: /<%= javascript_include_tag "selectivizr.js" %>/,
+          from: /<%= javascript_include_tag "selectivizr" %>/,
           to: '<script src="js/vendor/selectivizr.js"></script>'
         },{
-          from: /<%= javascript_include_tag "css3-mediaqueries.js" %>/,
+          from: /<%= javascript_include_tag "css3-mediaqueries" %>/,
           to: '<script src="js/vendor/css3-mediaqueries.js"></script>'
         },{
           from: /<%= yield :scripts %>/,
