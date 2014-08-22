@@ -34,13 +34,19 @@ module.exports = function(grunt) {
           grunt.option('jsFolder') + '/ornament/defaults.js',
           grunt.option('jsFolder') + '/ornament/refresh.js',
           grunt.option('jsFolder') + '/ornament/console.js',
+          grunt.option('jsFolder') + '/ornament/window-dimensions.js',
+          grunt.option('jsFolder') + '/ornament/debounce.js',
           grunt.option('jsFolder') + '/ornament/accessability.js',
+          grunt.option('jsFolder') + '/ornament/velocity.js',
+          grunt.option('jsFolder') + '/ornament/jquery.touchSwipe.js',
+          grunt.option('jsFolder') + '/ornament/jquery.placeholder.js',
           // grunt.option('jsFolder') + '/ornament/external_links.js',
           grunt.option('jsFolder') + '/components/layout.js',
           grunt.option('jsFolder') + '/components/sticky-header.js',
           grunt.option('jsFolder') + '/components/show.js',
           grunt.option('jsFolder') + '/components/navigation-mobile.js',
-          grunt.option('jsFolder') + '/components/tabs.js'
+          grunt.option('jsFolder') + '/components/tabs.js',
+          grunt.option('jsFolder') + '/components/menu-aim.js'
         ],
         // the location of the resulting JS file
         dest: grunt.option('jsFolder') + '/application.js'
@@ -50,8 +56,12 @@ module.exports = function(grunt) {
         src: [
           grunt.option('jsFolder') + '/vendor/fotorama.js',
           grunt.option('jsFolder') + '/components/fotorama.js',
+          grunt.option('jsFolder') + '/components/navigation.js',
           grunt.option('jsFolder') + '/components/column-conform.js',
           grunt.option('jsFolder') + '/components/pagintion-helper.js',
+          grunt.option('jsFolder') + '/components/select-link.js',
+          grunt.option('jsFolder') + '/components/map.js',
+          grunt.option('jsFolder') + '/components/lightbox.js',
           grunt.option('jsFolder') + '/components/tooltips.js',
         ],
         // the location of the resulting JS file
@@ -215,12 +225,20 @@ module.exports = function(grunt) {
           to: ''
         }]
       },
-      ornament_css: {
+      ornament_fotorama_css: {
         src: ['css/components/_fotorama-custom.scss'],
         overwrite: true,
         replacements: [{
           from: '@import "fotorama"',
-          to: '@import "vendor/fotorama"'
+          to:   '@import "vendor/fotorama"'
+        }]
+      },
+      ornament_lightbox_css: {
+        src: ['css/components/_lightbox.scss'],
+        overwrite: true,
+        replacements: [{
+          from: '@import "magnific-popup"',
+          to:   '@import "vendor/magnific-popup"'
         }]
       }
     }
@@ -237,6 +255,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('css', ['compass:dist']);
   grunt.registerTask('js', ['concat:top', 'concat:bottom', 'uglify']);
-  grunt.registerTask('ornament_patch', ['replace:ornament_index', 'replace:ornament_css']);
+  grunt.registerTask('ornament_patch', ['replace:ornament_index', 'replace:ornament_fotorama_css', 'replace:ornament_lightbox_css']);
   grunt.registerTask('icons', ['grunticon:myIcons']);
 };
