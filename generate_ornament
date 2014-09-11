@@ -62,12 +62,6 @@ do
 done
 
 #
-# rename existing css files to scss partials
-#
-
-mv "$DIR/css/vendor/fotorama.css" "$DIR/css/vendor/_fotorama.scss" 
-
-#
 # copy over image assets
 #
 
