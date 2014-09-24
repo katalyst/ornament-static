@@ -64,7 +64,8 @@ module.exports = function(grunt) {
           grunt.option('jsFolder') + '/components/lightbox.js',
           grunt.option('jsFolder') + '/components/tooltips.js',
           grunt.option('jsFolder') + '/components/kat-image-upload.js',
-          grunt.option('jsFolder') + '/components/text-limiter.js'
+          grunt.option('jsFolder') + '/components/text-limiter.js',
+          grunt.option('jsFolder') + '/components/issuu.js'
         ],
         // the location of the resulting JS file
         dest: grunt.option('jsFolder') + '/application_bottom.js'
