@@ -3,6 +3,9 @@
 Converts the rails Ornament framework in to a static-site friendly format, including grunt 
 tasks for sass and JS building. 
 
+## Ember
+
+[See instructions for building ornament for ember](https://github.com/katalyst/ornament-static/blob/master/EMBER.md)  
 
 ## Prerequesites
 
