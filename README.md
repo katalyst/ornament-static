@@ -5,10 +5,12 @@ tasks for sass and JS building.
 
 
 ## Prerequesites
+
 1. NPM (`brew install npm`)
 1. Compass (`gem install compass`)
 
 ## Getting Started
+
 1. Git clone this repo in to your project folder.  
 1. Run `./generate_ornament` to pull css, js and html files in to your project.  
 1. Run `grunt watch` and start developing!  
