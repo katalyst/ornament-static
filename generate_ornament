@@ -14,7 +14,7 @@ JS_VENDOR="$ORN/lib/generators/ornament/templates/vendor/assets/javascripts"
 # pull the latest ornament in
 #
 
-git clone git@github.com:katalyst/ornament.git -b feature/development ornament
+git clone git@github.com:katalyst/ornament.git ornament
 
 #
 # install grunt modules
