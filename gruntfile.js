@@ -243,6 +243,14 @@ module.exports = function(grunt) {
           from: '@import "magnific-popup"',
           to:   '@import "vendor/magnific-popup"'
         }]
+      },
+      ornament_core_css: {
+        src: ['css/ornament/_core.scss'],
+        overwrite: true,
+        replacements: [{
+          from: '@import "jquery.jcrop";',
+          to:   '@import "vendor/jquery.jcrop";'
+        }]
       }
     }
 
@@ -258,6 +266,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('css', ['compass:dist']);
   grunt.registerTask('js', ['concat:top', 'concat:bottom', 'uglify']);
-  grunt.registerTask('ornament_patch', ['replace:ornament_index', 'replace:ornament_fotorama_css', 'replace:ornament_lightbox_css']);
+  grunt.registerTask('ornament_patch', ['replace:ornament_index', 'replace:ornament_fotorama_css', 'replace:ornament_lightbox_css', 'replace:ornament_core_css']);
   grunt.registerTask('icons', ['grunticon:myIcons']);
 };

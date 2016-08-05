@@ -5,7 +5,7 @@ ORN="$DIR/ornament"
 
 CSS_BASE="$ORN/lib/generators/ornament/templates/app/assets/stylesheets"
 CSS_VENDOR="$ORN/lib/generators/ornament/templates/vendor/assets/stylesheets"
-CSS_SETTINGS="$ORN/test/dummy/app/assets/stylesheets/_settings.css.scss"
+CSS_SETTINGS="$ORN/test/dummy/app/assets/stylesheets/_settings.scss"
 
 JS_BASE="$ORN/lib/generators/ornament/templates/app/assets/javascripts"
 JS_VENDOR="$ORN/lib/generators/ornament/templates/vendor/assets/javascripts"
@@ -51,15 +51,15 @@ rm "$DIR/js/ornament/core.js"
 rm "$DIR/js/application.js"
 rm "$DIR/js/application_bottom.js"
 
-#
-# rename css from .css.scss to .scss
-#
+# #
+# # rename css from .css.scss to .scss
+# #
 
-echo "Renaming CSS files..."
-for files in css/*.css.scss css/**/*.css.scss css/**/**/*.css.scss
-do
-  mv "$files" "${files%.css.scss}.scss"
-done
+# echo "Renaming CSS files..."
+# for files in css/*.scss css/**/*.scss css/**/**/*.scss
+# do
+#   mv "$files" "${files%.scss}.scss"
+# done
 
 #
 # copy over image assets
